@@ -9,7 +9,9 @@ class StoryTeller
   end
 
   def get_hero
-    @hero = Hero.new
+    # Move stat-building questions to story teller
+    options = {}
+    @hero = Hero.new( options )
 
     add_spacing
     puts "Good Luck on Your Journey #{ @hero.name }"
@@ -39,9 +41,7 @@ class StoryTeller
   end
 
   def encounter
-    puts "This is an encounter."
-
-    ( 0..1 ) % 2 == 0 ?
+    rand( 0..1 ) % 2 == 0 ?
       fight_villain :
       companion_joins
 
@@ -49,9 +49,28 @@ class StoryTeller
   end
 
   def fight_villain
+    random_number = rand( 0..( @story.enemies.length - 1 ) )
+    # Encounters need to take options and have an event and choices
+    villain = @story.enemies[ random_number ]
+
+    Fight.new(
+      {
+        hero: @hero,
+        character: villain
+      }
+    )
   end
 
   def companion_joins
+    random_number = rand( 0..( @story.companions.length - 1 ) )
+    companion = @story.companions[ random_number ]
+    # Encounters need to take options and have an event and choices
+    FriendlyEncounter.new(
+      {
+        hero: @hero,
+        character: companion
+      }
+    )
   end
 
   def increase_round

@@ -1,8 +1,6 @@
 class Villain < Character
-  attr_accessor :sayings
-
   def initialize( character )
-    super
+    super( character )
 
     @name = character[ :name ] || "The Invisible Man"
     @sayings = character[ :sayings ] || []

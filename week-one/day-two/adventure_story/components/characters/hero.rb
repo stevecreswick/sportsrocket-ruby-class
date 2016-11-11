@@ -1,25 +1,23 @@
 class Hero < Character
-  attr_accessor :name
+  def initialize( character )
+    super( character )
 
-  def initialize
-    super
-
-    get_name
-    random_questions
+    name_character
   end
 
-  def get_name
+  def name_character
     name_message = "Enter the name of your hero:"
     @name = UserInput.new( name_message ).value
   end
 
-  def random_questions
-    # map through a random number of an array of questions
-    # associate a stat boost with each answer
-  end
+  # TODO
+  # def random_questions
+  #   # map through a random number of an array of questions
+  #   # associate a stat boost with each answer
+  # end
 
-  def ask_question( question )
-    # Ask question
-    # Apply stat boost
-  end
+  # def ask_question( question )
+  #   # Ask question
+  #   # Apply stat boost
+  # end
 end

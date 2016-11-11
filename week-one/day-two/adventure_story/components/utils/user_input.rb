@@ -4,6 +4,6 @@ class UserInput
   def initialize( prompt )
     puts prompt
 
-    @value = gets
+    @value = gets.chomp.downcase
   end
 end
