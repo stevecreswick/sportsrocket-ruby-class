@@ -41,11 +41,9 @@ class StoryTeller
   def encounter
     puts "This is an encounter."
 
-    (0..1) % 2 == 0 ?
+    ( 0..1 ) % 2 == 0 ?
       fight_villain :
       companion_joins
-    # Start a fight with a new villain
-    # Have a new companion ask to join
 
     continue
   end
