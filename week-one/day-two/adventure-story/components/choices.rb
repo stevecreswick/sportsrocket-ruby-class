@@ -1,13 +1,22 @@
-# Choice Making
 class ChoiceOption
   attr_accessor :message
   attr_accessor :stat_check
 
-  def initialize( options )
-    @message = options[ :message ]
+  def initialize( message )
+    @message = message
+
+    stats = [
+      "strength",
+      "speed",
+      "durability",
+      "smarts",
+      "sanity",
+      "charm"
+    ]
+
     @stat_check = StatCheck.new(
-      options[ :skill ],
-      options[ :value ]
+      stats[ rand(0..( stats.length - 1 ) ) ],
+      rand( 0..6 )
     )
   end
 end

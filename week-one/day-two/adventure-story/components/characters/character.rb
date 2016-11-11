@@ -1,6 +1,8 @@
-# Create Choose Your Own Adventure Story
-class Hero
-  def initialize()
+class Character
+  attr_accessor :stats
+  attr_accessor :sayings
+
+  def initialize
     @stats = {
       strength: rand(1..10),
       speed: rand(1..10),
@@ -10,7 +12,10 @@ class Hero
       charm: rand(1..10)
     }
 
-    puts "Enter your name:"
-    @name = gets
+    @sayings = []
+  end
+
+  def speak
+    puts sayings[ 0..sayings.length ]
   end
 end
