@@ -10,18 +10,16 @@ class Hero < Character
 
   def get_name
     name_message = "Enter the name of your hero:"
-    name = UserInput.new( name_message )
-
-    @name = name.value
-
-    add_spacing
-    puts "Good Luck on Your Journey #{ @name }"
-    add_spacing
+    @name = UserInput.new( name_message ).value
   end
 
   def random_questions
+    # map through a random number of an array of questions
+    # associate a stat boost with each answer
   end
 
   def ask_question( question )
+    # Ask question
+    # Apply stat boost
   end
 end
