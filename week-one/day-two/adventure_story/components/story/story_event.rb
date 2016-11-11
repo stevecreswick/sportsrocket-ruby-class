@@ -12,4 +12,10 @@ class StoryEvent
       end
     end
   end
+
+  def display_choices
+    self.choices.each_with_index do | choice, i |
+      puts "#{ i }: #{ choice.message }"
+    end
+  end
 end

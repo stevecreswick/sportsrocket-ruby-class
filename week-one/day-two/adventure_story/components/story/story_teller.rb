@@ -34,7 +34,7 @@ class StoryTeller
       random_event = @story.story_events[ rand( 0..@story.story_events.length - 1 ) ]
 
       puts random_event.event
-      display_choices( random_event.choices )
+      random_event.display_choices
     end
 
     continue
@@ -50,7 +50,7 @@ class StoryTeller
 
   def fight_villain
     random_number = rand( 0..( @story.enemies.length - 1 ) )
-    # Encounters need to take options and have an event and choices
+
     villain = @story.enemies[ random_number ]
 
     Fight.new(
@@ -64,7 +64,7 @@ class StoryTeller
   def companion_joins
     random_number = rand( 0..( @story.companions.length - 1 ) )
     companion = @story.companions[ random_number ]
-    # Encounters need to take options and have an event and choices
+
     FriendlyEncounter.new(
       {
         hero: @hero,
@@ -82,11 +82,5 @@ class StoryTeller
 
     increase_round
     tell_story
-  end
-
-  def display_choices( choice_array )
-    choice_array.each_with_index do | choice, i |
-      puts "#{ i }: #{ choice.message }"
-    end
   end
 end

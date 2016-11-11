@@ -20,24 +20,12 @@ class Encounter
   end
 
   def story_event
-    puts "Character Event"
-    puts character.story_event
-    # Add encounter prompts and choices
-      # is a prompt specific to a villain
-      # Does a villain have an entrance
+    puts character.story_event.event
 
-    # Create a story event
-      # Takes a prompt
-      # Takes choices
+    single_line
 
-        # Creates a choice for each choice
-          # Each choice creates a stat check
-
-    # Events
-    # attr_accessor :event_prompt
-    # attr_accessor :event_options
-
-    # Use this to create an event
-
+    character.story_event.choices.each do | choice |
+      puts choice.message
+    end
   end
 end

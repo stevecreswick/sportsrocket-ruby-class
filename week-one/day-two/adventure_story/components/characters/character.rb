@@ -42,7 +42,7 @@ class Character
       event_options = []
 
       self.choices.each do | choice |
-        event_options.push( StoryParagraph.new( choice ) )
+        event_options.push( choice )
       end
 
       character_event = {
