@@ -54,9 +54,9 @@ class Character
     end
   end
 
-  def list_choices
-    if self.choices.length > 0
-      puts self.choices
-    end
-  end
+  # def list_choices
+  #   if self.choices.length > 0
+  #     puts self.choices
+  #   end
+  # end
 end

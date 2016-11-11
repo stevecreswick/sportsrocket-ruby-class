@@ -9,7 +9,6 @@ class StoryTeller
   end
 
   def get_hero
-    # Move stat-building questions to story teller
     options = {}
     @hero = Hero.new( options )
 

@@ -7,7 +7,7 @@ class Hero < Character
 
   def name_character
     name_message = "Enter the name of your hero:"
-    @name = UserInput.new( name_message ).value
+    @name = UserInput.new( name_message ).value || "The Hero with No Name"
   end
 
   # TODO

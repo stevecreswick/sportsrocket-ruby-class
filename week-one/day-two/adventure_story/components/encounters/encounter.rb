@@ -24,8 +24,10 @@ class Encounter
 
     single_line
 
-    character.story_event.choices.each do | choice |
-      puts choice.message
-    end
+    character.story_event.display_choices
+
+    available_commands = [ "0", "1", "2" ]
+
+    UserInput.new( "#{ hero.name.capitalize }, whatever shall you do?" ).require_values( available_commands )
   end
 end
