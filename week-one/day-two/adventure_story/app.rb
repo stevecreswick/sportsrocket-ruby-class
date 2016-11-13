@@ -10,4 +10,12 @@ story_options = {
   enemies: @enemy_library
 }
 
-@story_teller = StoryTeller.new( Story.new( story_options ) )
+UserInput.new(
+  {
+    prompt: "Put in an answer",
+    required_type: 'string',
+    input_options: ['yes', 'no']
+  }
+)
+
+# @story_teller = StoryTeller.new( Story.new( story_options ) )
