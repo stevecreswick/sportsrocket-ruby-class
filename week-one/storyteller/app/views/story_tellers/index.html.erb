@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Story Tellers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @story_tellers.each do |story_teller| %>
+      <tr>
+        <td><%= story_teller.name %></td>
+        <td><%= story_teller.description %></td>
+        <td><%= link_to 'Show', story_teller %></td>
+        <td><%= link_to 'Edit', edit_story_teller_path(story_teller) %></td>
+        <td><%= link_to 'Destroy', story_teller, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Story Teller', new_story_teller_path %>

@@ -1,0 +1,2 @@
+module StoryTellersHelper
+end

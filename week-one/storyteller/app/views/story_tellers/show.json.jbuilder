@@ -1,0 +1,1 @@
+json.partial! "story_tellers/story_teller", story_teller: @story_teller

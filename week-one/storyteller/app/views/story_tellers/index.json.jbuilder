@@ -1,0 +1,1 @@
+json.array! @story_tellers, partial: 'story_tellers/story_teller', as: :story_teller
